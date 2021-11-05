@@ -5,6 +5,7 @@ class Covid{
   final int new_case_excludeabroad;
   final int total_case_excludeabroad;
   final int new_death;
+  final int total_death;
   final int new_recovered;
   final int total_recovered;
   final String update_date;
@@ -15,6 +16,7 @@ class Covid{
     required this.new_case_excludeabroad,
     required this.total_case_excludeabroad,
     required this.new_death,
+    required this.total_death,
     required this.new_recovered,
     required this.total_recovered,
     required this.update_date,
@@ -28,6 +30,7 @@ class Covid{
       new_case_excludeabroad: json['new_case_excludeabroad'],
       total_case_excludeabroad: json['total_case_excludeabroad'],
       new_death: json['new_death'],
+      total_death: json['total_death'],
       new_recovered: json['new_recovered'],
       total_recovered: json['total_recovered'],
       update_date: json['update_date'],

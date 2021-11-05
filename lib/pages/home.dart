@@ -1,6 +1,6 @@
-import 'package:bookshop/model/apiresult.dart';
-import 'package:bookshop/model/covid.dart';
-import 'package:bookshop/service/api.dart';
+import 'package:covidapp/model/apiresult.dart';
+import 'package:covidapp/model/covid.dart';
+import 'package:covidapp/service/api.dart';
 import 'package:flutter/material.dart';
 
 class covidHome extends StatefulWidget {
@@ -15,7 +15,8 @@ class _covidHomeState extends State<covidHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Covid"),
+        title: Center(child: Text("Covid-19",)),
+
       ),
       body: FutureBuilder<Covid>(
         future: futureCovid,
@@ -32,7 +33,7 @@ class _covidHomeState extends State<covidHome> {
               padding: EdgeInsets.all(8.0),
               itemCount: 1,
               itemBuilder: (BuildContext context, int index) {
-                var covid = covidList;
+                var covid = covidList!;
 
                 return Card(
                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -41,9 +42,21 @@ class _covidHomeState extends State<covidHome> {
                   shadowColor: Colors.black.withOpacity(0.2),
                   child: InkWell(
                     onTap: () {},
-                    child: Row(
+                    child: Column(
                      children: [
-                       Text(covid!.txn_date)
+                       Text("วันที่"+covid.txn_date.toString()),
+                       Text("ผู้ป่วยใหม่"+covid.new_case.toString()),
+                       Text("ผู้ป่วยสะสม"+covid.total_case.toString()),
+                       Text("ผู้ป่วยที่ไม่ได้เดินทางจากต่างประเทศ"+covid.new_case_excludeabroad.toString()),
+                       Text("ผู้ป่วยที่ไม่ได้เดินทางจากต่างประเทศรวมทั้งหมด"+covid.total_case_excludeabroad.toString()),
+                       Text("เสียชีวิตวันนี้"+covid.new_death.toString()),
+                       Text("เสียชีวิตรวม"+covid.total_death.toString()),
+                       Text("รักษาหายวันนี้"+covid.new_recovered.toString()),
+                       Text("รักษาหายรวม"+covid.total_recovered.toString()),
+                       Text("เวลาที่อัพเดต"+covid.update_date.toString()),
+
+                       
+
                      ],
                     ),
                   ),
@@ -51,6 +64,7 @@ class _covidHomeState extends State<covidHome> {
               },
             );
           }
+
 
           if (snapshot.hasError) {
             return Center(
