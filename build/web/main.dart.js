@@ -34754,7 +34754,7 @@ if(p<q){k=j.p5(p)
 if(s.$2(a,k)>0){C.c.n(j.b,b,k)
 b=p}}C.c.n(j.b,b,a)}}
 F.BS.prototype={
-P(a,b){return new S.ta(new F.uS(null),"Flutter Demo",X.adB(null,C.e3),null)}}
+P(a,b){return new S.ta(new F.uS(null),"Covid App",X.adB(null,C.e3),null)}}
 F.uS.prototype={
 aN(){return new F.Kc(C.n)}}
 F.Kc.prototype={
